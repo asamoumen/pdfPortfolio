@@ -1,23 +1,25 @@
 package com.pdfmanager;
+import com.aspose.pdf.Document;
+import com.aspose.pdf.FileSpecification;
 
 public class PdfManager {
 
-	public static void main(String[] args) {
+	public  PdfManager() {
 		// TODO Auto-generated method stub
-	
+		 
 	}
 	
-	public static void generatePDF() {
+	public static String generatePDF() {
 		//Instantiate Document Object
-	 	com.aspose.pdf.Document doc = new com.aspose.pdf.Document();
+	 	Document doc = new com.aspose.pdf.Document();
 	 	//Instantiate document Collection object
 	 	doc.setCollection(new com.aspose.pdf.Collection());
 	 	 
 	 	//Get Files to add to Portfolio
 	 	//com.aspose.pdf.FileSpecification xps = new com.aspose.pdf.FileSpecification("printoutput.xps");
-	 	com.aspose.pdf.FileSpecification word = new com.aspose.pdf.FileSpecification("sample.doc");
-	 	com.aspose.pdf.FileSpecification image = new com.aspose.pdf.FileSpecification("aspose.png");
-	 	com.aspose.pdf.FileSpecification pdf = new com.aspose.pdf.FileSpecification("test.PDF");
+	 	FileSpecification word = new com.aspose.pdf.FileSpecification("sample.doc");
+	 	FileSpecification image = new com.aspose.pdf.FileSpecification("aspose.png");
+	 	FileSpecification pdf = new com.aspose.pdf.FileSpecification("test.PDF");
 	 	 
 	 	//Provide description of the files
 	 	//xps.setDescription("XPS File");
@@ -34,6 +36,8 @@ public class PdfManager {
 	 	System.out.println("inside first method");
 	 	//Save Portfolio document
 	 	doc.save("PortFoliio_output.pdf");
+	 	
+	 	return "ok";
 	}
 
 }
